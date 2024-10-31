@@ -15,25 +15,17 @@ import React from 'react';
   } from 'react-native';
 
 
-function ToDoList() {
+function ToDoList({ tasks }) {
   return (
     <SafeAreaView>
       <ScrollView>
-        <Pressable>
-          <View style={[styles.task, styles.completed]}>
-            <Text style={styles.taskText}>Do laundry</Text>
-          </View>
-        </Pressable>
-        <Pressable>
-          <View style={[styles.task]}>
-            <Text style={styles.taskText}>Go to gym</Text>
-          </View>
-        </Pressable>
-        <Pressable>
-          <View style={[styles.task, styles.completed]}>
-            <Text style={styles.taskText}>Walk dog</Text>
-          </View>
-        </Pressable>
+        {tasks.map((tasks) => (
+          <Pressable key={tasks}>
+            <View style={styles.task}>
+              <Text style={styles.taskText}>{tasks}</Text>
+            </View>
+          </Pressable>
+        ))}
       </ScrollView>
     </SafeAreaView>
   );
