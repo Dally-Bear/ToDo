@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, Button, Text } from 'react-native';
+import { SafeAreaView, View, Button, Text, StyleSheet } from 'react-native';
 import ToDoList from "../components/ToDoList";
 import ToDoForm from "../components/ToDoForm";
 import { useState } from 'react';
@@ -21,15 +21,26 @@ export default function HomeScreen({ navigation }) {
     <MainLayout>
       <SafeAreaView>
         <View>
-        <Text>Home Screen</Text> 
+          <Text>Home Screen</Text> 
           <ToDoList tasks={tasks} />
           <ToDoForm addTask={addTask} tasks={tasks} />
-          <Button
-            title="Go to About"
-            onPress={() => navigation.navigate('About')}
-          />
+          <View style={styles.buttonContainer}>
+            <Button
+             title="Go to About"
+             onPress={() => navigation.navigate('About')}
+            />
+          </View>
         </View>
       </SafeAreaView>
     </MainLayout>
   );
 }
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    width: 200,
+    marginTop: 30,
+    alignSelf: 'center',
+  },
+});
+

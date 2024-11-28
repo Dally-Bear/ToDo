@@ -16,7 +16,9 @@ const AboutScreen = () => {
   return (
     <MainLayout>
       <View style={styles.container}>
-        <Text style={styles.textBody}>This is the About Screen</Text>
+        <Text style={styles.textBody}>ToD0 List</Text>
+        <Text style={styles.textBody}>By Dallas Huppie</Text>
+        <Text style={styles.textBody}>About Screen</Text>
         <Text style={styles.textBody}>Current Date: {currentDate}</Text>
       </View>
     </MainLayout>
